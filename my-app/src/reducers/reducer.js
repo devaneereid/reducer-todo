@@ -1,4 +1,4 @@
-export const item = [{
+export const items = [{
     item: 'Learn about reducers',
     completed: false,
     id: 3892987589
@@ -6,7 +6,7 @@ export const item = [{
 
 export const reducer = (state, action) => {
   console.log(Date.now())
-  switch(action.type) {
+  switch (action.type) {
     case 'ADD_TODO': 
       return [
         ...state,

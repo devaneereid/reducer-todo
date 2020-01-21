@@ -2,15 +2,14 @@ import React, {useState} from 'react';
 
 const Form = ({dispatch}) => {
     const [todo, setTodo] = useState('');
-    const [date, setDate]
-    
+    const [date, setDate] = useState('');
     const addTodo = e => {
         e.preventDefault();
         dispatch({
             type: 'ADD_TODO',
             payload: [todo, date]
         });
-        setTodo('');
+        return setTodo('');
     };
 
     const handleChanges = e => {
@@ -25,9 +24,9 @@ const Form = ({dispatch}) => {
         <form onSubmit={addTodo}>
             <input 
                 name='items'
-                onChange={handleChanges}
                 id={Date.now()}
                 value={todo}
+                onChange={handleChanges}
                 />
             <input 
                 name='date'
@@ -35,10 +34,12 @@ const Form = ({dispatch}) => {
                 value={date}
                 onChange={handleDateChanges}
                 />
-            <button onClick={() => {
+            {/* <button onClick={() => {
                 dispatch({ type:'ADD_TODO',
                     payload: todo });
-                dispatch({ type: 'TOGGLED'});}}>Update</button>
+                dispatch({ type: 'TOGGLED'});}}>Update</button> */}
+                <button onClick={handleChanges}
+                        type='submit'>Add To Do</button>
         </form>
     );
 };
