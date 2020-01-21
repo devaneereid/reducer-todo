@@ -1,11 +1,17 @@
-export const items = [{
+export const items = [
+  {
     item: 'Learn about reducers',
     completed: false,
     id: 3892987589
-  }]
+  },
+  { item: 'Reducer Practice',
+    completed: false,
+    id: 389298790
+  }
+];
+
 
 export const reducer = (state, action) => {
-  console.log(Date.now())
   switch (action.type) {
     case 'ADD_TODO': 
       return [
@@ -25,5 +31,15 @@ export const reducer = (state, action) => {
         }
         return toggle;
       });
+    case 'CLEARED':
+      return state.filter(e => !e.completed);
+        default: 
+        return state;
   }
 };
+
+
+// const d = Date(Date.now());
+//   let a = d.toString()
+//   document.write('Current Date is: ' + a)
+//   console.log(Date.now());

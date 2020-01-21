@@ -9,7 +9,7 @@ const Form = ({dispatch}) => {
             type: 'ADD_TODO',
             payload: [todo, date]
         });
-        return setTodo('');
+        setTodo('');
     };
 
     const handleChanges = e => {
@@ -19,6 +19,13 @@ const Form = ({dispatch}) => {
     const handleDateChanges = e => {
         setDate(e.target.value);
     };
+
+    const clearItems = e => {
+        e.preventDefault();
+        dispatch({
+            type: 'CLEARED'
+        });
+    }
 
     return (
         <form onSubmit={addTodo}>
@@ -40,6 +47,8 @@ const Form = ({dispatch}) => {
                 dispatch({ type: 'TOGGLED'});}}>Update</button> */}
                 <button onClick={handleChanges}
                         type='submit'>Add To Do</button>
+                <button onClick={clearItems}
+                        type='submit'>Clear</button>
         </form>
     );
 };
