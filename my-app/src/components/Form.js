@@ -30,7 +30,8 @@ const Form = ({dispatch}) => {
     return (
         <form onSubmit={addTodo}>
             <input 
-                name='items'
+                name='todo'
+                type='text'
                 id={Date.now()}
                 value={todo}
                 onChange={handleChanges}
@@ -40,6 +41,7 @@ const Form = ({dispatch}) => {
                 type='text'
                 value={date}
                 onChange={handleDateChanges}
+                placeholder='todo'
                 />
             {/* <button onClick={() => {
                 dispatch({ type:'ADD_TODO',
@@ -48,9 +50,25 @@ const Form = ({dispatch}) => {
                 <button onClick={handleChanges}
                         type='submit'>Add To Do</button>
                 <button onClick={clearItems}
-                        type='submit'>Clear</button>
+                        type='submit'>Clear Items</button>
         </form>
     );
 };
 
 export default Form;
+
+
+// Trying to get the date to show correctly
+/* <input 
+name='items'
+type='text'
+value={todo}
+onChange={handleChanges}
+/>
+<input 
+name='date'
+type='date'
+value={date}
+id={Date.now()}
+onChange={handleDateChanges}
+/> */

@@ -9,9 +9,9 @@ const Todo = () => {
     return (
         <div className='todo'>
             <Form dispatch={dispatch} />
-            {state.map(items => {
-                return <Toggle key={items.id}
-                        items={items}
+            {state.map(item => {
+                return <Toggle key={item.id}
+                        items={item}
                         dispatch={dispatch} />
             })}
         </div>
