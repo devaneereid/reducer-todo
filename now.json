@@ -3,6 +3,6 @@
     "name": "my-app",
     "builds": [{ "src": "my-app/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
     "routes": [
-        { "src": "/(.*)", "dest": "project-name/$1" }
+        { "src": "/(.*)", "dest": "my-app/$1" }
     ]
 }
