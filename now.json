@@ -1,8 +1,8 @@
 {
     "version": 2,
     "name": "my-app",
-    "builds": [{ "src": "my-app.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
+    "builds": [{ "src": "my-app/package.json", "use": "@now/static-build", "config": {"distDir": "build"} }],
     "routes": [
-        { "src": "/(.*)", "dest": "my-app/$1" }
+        { "src": "/(.*)", "dest": "project-name/$1" }
     ]
 }
